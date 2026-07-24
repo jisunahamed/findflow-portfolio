@@ -56,7 +56,7 @@ test("keeps the final build interactive and removes the starter preview", async 
   assert.match(page, /role="status"/);
   assert.match(css, /@media \(max-width: 720px\)/);
   assert.match(css, /prefers-reduced-motion: reduce/);
-  assert.match(css, /--purple: #8958fe/);
+  assert.match(css, /--purple: #67d8f7/);
   assert.match(css, /--navy: #030d28/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 

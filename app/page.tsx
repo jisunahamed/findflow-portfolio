@@ -146,7 +146,8 @@ export default function Home() {
 
   return (
     <main>
-      <section className="hero-shell" id="home">
+      <div className="intro-frame">
+        <section className="hero-shell" id="home">
         <header className="site-header">
           <Brand />
           <button
@@ -185,74 +186,130 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mosaic reveal">
-          <article className="mosaic-card mosaic-card--purple mosaic-card--financial">
-            <p className="mosaic-title">Financial<br />Services</p>
-            <div className="mosaic-line" />
-            <div className="floating-tags">
-              <span>IPO</span><span>Investor Relations</span><span>M&amp;A</span>
+          <div className="mosaic reveal">
+            <div className="mosaic-column mosaic-column--one">
+              <article className="mosaic-card mosaic-card--purple mosaic-card--financial">
+                <p className="mosaic-title">Financial<br />Services</p>
+                <div className="mosaic-line" />
+                <div className="floating-tags">
+                  <span>IPO</span><span>Investor Relations</span><span>M&amp;A</span>
+                  <span>Bonds Issuances</span><span>Financial Analysis</span>
+                </div>
+              </article>
+              <article className="mosaic-card mosaic-card--photo mosaic-card--projects">
+                <Image
+                  src="/office.jpg"
+                  alt="A modern communications office"
+                  fill
+                  sizes="(max-width: 720px) 50vw, 20vw"
+                  unoptimized
+                />
+                <div className="photo-stat photo-stat--compact"><b>120+</b><small>Capital Market Projects</small></div>
+              </article>
+              <div className="mosaic-fade mosaic-fade--brand" aria-hidden="true" />
             </div>
-          </article>
-          <article className="mosaic-card mosaic-card--photo mosaic-card--clients">
-            <Image
-              src="/team.jpg"
-              alt="Team collaborating around a table"
-              fill
-              sizes="(max-width: 720px) 50vw, 22vw"
-              priority
-              unoptimized
-            />
-            <span className="date-chip">2018 - 2025</span>
-            <div className="photo-stat"><b>500+</b><small>Clients Served</small></div>
-          </article>
-          <article className="mosaic-card mosaic-card--cyan mosaic-card--comprehensive">
-            <p className="mosaic-title">Comprehensive<br />Service</p>
-            <div className="pattern" aria-hidden="true">B B B<br />B B B<br />B B B</div>
-          </article>
-          <article className="mosaic-card mosaic-card--photo mosaic-card--success">
-            <Image
-              src="/consulting.jpg"
-              alt="Consultants in a collaborative meeting"
-              fill
-              sizes="(max-width: 720px) 50vw, 22vw"
-              unoptimized
-            />
-            <p className="mosaic-title">Customer<br />Success</p>
-          </article>
-          <article className="mosaic-card mosaic-card--lavender mosaic-card--growth">
-            <p className="mosaic-title">Investment<br />Benefits</p>
-            <div className="chart" aria-hidden="true">
-              <i /><i /><i /><i /><span>↗</span>
-            </div>
-          </article>
-          <article className="mosaic-card mosaic-card--dark mosaic-card--digital">
-            <p>SEO &amp; PPC<br />Content Marketing<br />Social Media Management</p>
-          </article>
-        </div>
-      </section>
 
-      <section className="about-section section-pad" id="about">
-        <p className="eyebrow reveal">/ABOUT US</p>
-        <h2 className="about-statement reveal">
-          <span>BOXES is a </span><b>Next-Generation Global Agency</b><span> founded to </span>
-          <b>Pioneer a New Era of Communications</b><span>, as it broadly combines all the skills,
-          talents and tools used by </span><b>Modern Communication Systems</b><span>, &amp; modern or renewed brands.</span>
-        </h2>
-
-        <div className="values reveal">
-          {[
-            ["✦", "Strategic Excellence"],
-            ["✳", "Creative Solutions"],
-            ["◀", "Financial Expertise"],
-            ["✕", "Comprehensive Service"],
-            ["◒", "Transparency & Partnership"],
-          ].map(([icon, label]) => (
-            <div className="value" key={label}>
-              <span>{icon}</span><small>{label}</small>
+            <div className="mosaic-column mosaic-column--two">
+              <article className="mosaic-card mosaic-card--photo mosaic-card--clients">
+                <Image
+                  src="/team.jpg"
+                  alt="Team collaborating around a table"
+                  fill
+                  sizes="(max-width: 720px) 50vw, 22vw"
+                  priority
+                  unoptimized
+                />
+                <span className="date-chip">2018 - 2025</span>
+                <div className="photo-stat"><b>500+</b><small>Clients Served</small></div>
+              </article>
+              <article className="mosaic-card mosaic-card--figures">
+                <p>Boxes<br />In Figures</p>
+                <div>
+                  <span><small>Strategic<br />Campaigns</small><b>200</b></span>
+                  <span><small>Years of<br />Experience</small><b>7+</b></span>
+                  <span><small>Sectors<br />Covered</small><b>50+</b></span>
+                </div>
+              </article>
             </div>
-          ))}
-        </div>
-      </section>
+
+            <div className="mosaic-column mosaic-column--three">
+              <article className="mosaic-card mosaic-card--cyan mosaic-card--comprehensive">
+                <p className="mosaic-title">Comprehensive<br />Service</p>
+                <div className="pattern" aria-hidden="true">B B B<br />B B B<br />B B B</div>
+              </article>
+              <article className="mosaic-card mosaic-card--photo mosaic-card--digital">
+                <Image
+                  src="/phone.jpg"
+                  alt="Digital communications work on a laptop"
+                  fill
+                  sizes="(max-width: 720px) 50vw, 20vw"
+                  unoptimized
+                />
+                <p>Digital<br />Services</p>
+              </article>
+              <div className="mosaic-fade mosaic-fade--cyan" aria-hidden="true" />
+            </div>
+
+            <div className="mosaic-column mosaic-column--four">
+              <article className="mosaic-card mosaic-card--photo mosaic-card--success">
+                <Image
+                  src="/consulting.jpg"
+                  alt="Consultants in a collaborative meeting"
+                  fill
+                  sizes="(max-width: 720px) 50vw, 22vw"
+                  unoptimized
+                />
+                <p className="mosaic-title">Customer<br />Success</p>
+              </article>
+              <article className="mosaic-card mosaic-card--strategy">
+                <p className="mosaic-title">Strategic<br />Services</p>
+                <div className="strategy-mark" aria-hidden="true"><i /><i /><i /></div>
+                <div className="strategy-tags">
+                  <span>Crisis Management</span><span>Media Relations</span>
+                  <span>Reputation Management</span><span>Advertising</span>
+                </div>
+              </article>
+            </div>
+
+            <div className="mosaic-column mosaic-column--five">
+              <article className="mosaic-card mosaic-card--lavender mosaic-card--growth">
+                <p className="mosaic-title">Investment<br />Benefits</p>
+                <div className="chart" aria-hidden="true">
+                  <i /><i /><i /><i /><span>↗</span>
+                </div>
+                <b className="growth-value">$1.5Bill</b>
+              </article>
+              <article className="mosaic-card mosaic-card--stakeholders">
+                <b>50,000</b><small>Stakeholder<br />Engagements</small>
+              </article>
+              <div className="mosaic-fade mosaic-fade--photo" aria-hidden="true" />
+            </div>
+          </div>
+        </section>
+
+        <section className="about-section section-pad" id="about">
+          <p className="eyebrow reveal">/ABOUT US</p>
+          <h2 className="about-statement reveal">
+            <span>BOXES is a </span><b>Next-Generation Global Agency</b><span> founded to </span>
+            <b>Pioneer a New Era of Communications</b><span>, as it broadly combines all the skills,
+            talents and tools used by </span><b>Modern Communication Systems</b><span>, &amp; modern or renewed brands.</span>
+          </h2>
+
+          <div className="values reveal">
+            {[
+              ["✦", "Strategic Excellence"],
+              ["✳", "Creative Solutions"],
+              ["◀", "Financial Expertise"],
+              ["✕", "Comprehensive Service"],
+              ["◒", "Transparency & Partnership"],
+            ].map(([icon, label]) => (
+              <div className="value" key={label}>
+                <span>{icon}</span><small>{label}</small>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
 
       <section className="client-strip">
         <div className="client-strip__inner">
