@@ -2,33 +2,11 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
-
-  return worker.fetch(
-    new Request("http://localhost/", {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
+test("Next.js prerenders the complete FindFlow homepage", async () => {
+  const html = await readFile(
+    new URL("../.next/server/app/index.html", import.meta.url),
+    "utf8",
   );
-}
-
-test("server-renders the complete FindFlow homepage", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-
-  const html = await response.text();
   assert.match(
     html,
     /<title>FindFlow \| AI Automation &amp; Software Development<\/title>/i,
@@ -54,13 +32,25 @@ test("server-renders the complete FindFlow homepage", async () => {
   assert.match(html, /Privacy by design/);
   assert.doesNotMatch(html, /\bBOXES\b|boxes\.agency|500\+ CLIENTS|King Fahd Road/i);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);
+
+  const vercelHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (vercelHost) {
+    assert.match(
+      html,
+      new RegExp(
+        `<link rel="canonical" href="https://${vercelHost.replaceAll(".", "\\.")}/?"`,
+      ),
+    );
+  }
 });
 
-test("keeps the final build interactive and removes the starter preview", async () => {
-  const [page, css, packageJson] = await Promise.all([
+test("keeps the Vercel build interactive and removes the starter preview", async () => {
+  const [page, css, packageJson, robots, sitemap] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
+    readFile(new URL("../.next/server/app/robots.txt.body", import.meta.url), "utf8"),
+    readFile(new URL("../.next/server/app/sitemap.xml.body", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /^"use client";/);
@@ -74,6 +64,14 @@ test("keeps the final build interactive and removes the starter preview", async 
   assert.match(css, /--navy: #030d28/);
   assert.match(css, /:focus-visible/);
   assert.match(packageJson, /"name": "findflow-website"/);
+  assert.match(packageJson, /"build": "next build"/);
+  assert.match(packageJson, /"start": "next start"/);
+  assert.match(robots, /User-Agent: \*/);
+  assert.match(robots, /Allow: \//);
+  assert.match(sitemap, /<urlset/);
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    assert.match(sitemap, new RegExp(process.env.VERCEL_PROJECT_PRODUCTION_URL));
+  }
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 
   await assert.rejects(

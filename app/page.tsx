@@ -289,7 +289,6 @@ export default function Home() {
                   alt="A team planning an AI automation workflow"
                   fill
                   sizes="(max-width: 720px) 50vw, 20vw"
-                  unoptimized
                 />
                 <div className="photo-stat photo-stat--compact"><b>Less admin</b><small>More focused work</small></div>
               </article>
@@ -304,7 +303,6 @@ export default function Home() {
                   fill
                   sizes="(max-width: 720px) 50vw, 22vw"
                   priority
-                  unoptimized
                 />
                 <span className="date-chip">Discover → Deliver</span>
                 <div className="photo-stat"><b>One team</b><small>Strategy, design &amp; engineering</small></div>
@@ -330,7 +328,6 @@ export default function Home() {
                   alt="A designer reviewing a digital product interface"
                   fill
                   sizes="(max-width: 720px) 50vw, 20vw"
-                  unoptimized
                 />
                 <p>Web<br />Experiences</p>
               </article>
@@ -344,7 +341,6 @@ export default function Home() {
                   alt="Product specialists planning a software delivery roadmap"
                   fill
                   sizes="(max-width: 720px) 50vw, 22vw"
-                  unoptimized
                 />
                 <p className="mosaic-title">Idea to<br />Launch</p>
               </article>
@@ -443,7 +439,6 @@ export default function Home() {
                   alt="An AI workflow and customer portal being reviewed on a laptop"
                   fill
                   sizes="(max-width: 720px) 100vw, 50vw"
-                  unoptimized
                 />
               </div>
               <h3>Automate a High-Friction Operation</h3>
@@ -456,7 +451,6 @@ export default function Home() {
                   alt="A SaaS product discovery and planning workshop in progress"
                   fill
                   sizes="(max-width: 720px) 100vw, 50vw"
-                  unoptimized
                 />
               </div>
               <h3>Launch a Market-Ready SaaS Product</h3>
@@ -527,7 +521,6 @@ export default function Home() {
                 alt="A collaborative software partnership beginning with a handshake"
                 fill
                 sizes="(max-width: 980px) 100vw, 50vw"
-                unoptimized
               />
               <div className="contact-info">
                 <div><small>Collaboration</small><b>UK &amp; CET overlap</b></div>

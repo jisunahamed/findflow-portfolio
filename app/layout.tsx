@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const configuredSiteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: configuredSiteUrl ? new URL(configuredSiteUrl) : undefined,
