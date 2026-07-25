@@ -81,6 +81,15 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid rgba(36, 169, 207, 0.48);
+  outline-offset: 4px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -623,7 +632,8 @@ img {
   top: 18px;
   right: 18px;
   color: #fff;
-  font-size: 13px;
+  font-size: 11px;
+  white-space: nowrap;
 }
 
 .photo-stat {
@@ -647,7 +657,7 @@ img {
 }
 
 .photo-stat--compact b {
-  font-size: 40px;
+  font-size: clamp(22px, 2.3vw, 34px);
 }
 
 .photo-stat--compact small {
@@ -885,12 +895,17 @@ img {
 .services-grid {
   margin-top: clamp(58px, 7vw, 98px);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(32px, 5vw, 76px);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(40px, 4vw, 64px) clamp(28px, 3.5vw, 52px);
 }
 
 .service-column {
   min-width: 0;
+  grid-column: span 2;
+}
+
+.service-column:nth-child(n + 4) {
+  grid-column: span 3;
 }
 
 .service-glyph {
@@ -1091,8 +1106,9 @@ img {
 .quote-mark {
   height: 31px;
   color: var(--purple);
-  font-family: Georgia, serif;
-  font-size: 60px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
   line-height: 0.8;
 }
 
@@ -1191,8 +1207,12 @@ img {
 
 .service-selector {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 9px;
+}
+
+.selector-card:last-child {
+  grid-column: 1 / -1;
 }
 
 .selector-card {
@@ -1533,6 +1553,19 @@ img {
     height: 450px;
   }
 
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-column,
+  .service-column:nth-child(n + 4) {
+    grid-column: auto;
+  }
+
+  .service-column:last-child {
+    grid-column: 1 / -1;
+  }
+
   .case-intro {
     grid-template-columns: 1fr;
     align-items: start;
@@ -1719,6 +1752,12 @@ img {
   .services-grid {
     grid-template-columns: 1fr;
     gap: 70px;
+  }
+
+  .service-column,
+  .service-column:nth-child(n + 4),
+  .service-column:last-child {
+    grid-column: auto;
   }
 
   .service-column > p {

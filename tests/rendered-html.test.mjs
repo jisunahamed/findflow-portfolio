@@ -23,22 +23,36 @@ async function render() {
   );
 }
 
-test("server-renders the complete Boxes homepage", async () => {
+test("server-renders the complete FindFlow homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Boxes \| Intelligent Communications<\/title>/i);
-  assert.match(html, /Your Global Partner/);
-  assert.match(html, /for Creative Solutions/);
+  assert.match(
+    html,
+    /<title>FindFlow \| AI Automation &amp; Software Development<\/title>/i,
+  );
+  assert.match(
+    html,
+    /<meta name="description" content="FindFlow designs AI automation, SaaS products, custom software and high-performance websites for ambitious startups, SMEs and product teams across Europe\."/i,
+  );
+  assert.match(html, /AI Automation &amp;/);
+  assert.match(html, /Software Built to Flow/);
+  assert.match(html, /FindFlow is an/);
+  assert.match(html, /Software Development/);
+  assert.match(html, /SaaS Development/);
   assert.match(html, /id="about"/);
   assert.match(html, /id="services"/);
   assert.match(html, /id="case-studies"/);
-  assert.match(html, /id="testimonials"/);
+  assert.match(html, /id="process"/);
   assert.match(html, /id="contact"/);
   assert.match(html, /\/QUESTIONS/);
   assert.match(html, /aria-label="Toggle navigation"/);
+  assert.match(html, /type="application\/ld\+json"/);
+  assert.match(html, /FAQPage/);
+  assert.match(html, /Privacy by design/);
+  assert.doesNotMatch(html, /\bBOXES\b|boxes\.agency|500\+ CLIENTS|King Fahd Road/i);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);
 });
 
@@ -58,6 +72,8 @@ test("keeps the final build interactive and removes the starter preview", async 
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(css, /--purple: #67d8f7/);
   assert.match(css, /--navy: #030d28/);
+  assert.match(css, /:focus-visible/);
+  assert.match(packageJson, /"name": "findflow-website"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 
   await assert.rejects(

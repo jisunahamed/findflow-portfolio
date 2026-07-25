@@ -1,10 +1,40 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
 export const metadata: Metadata = {
-  title: "Boxes | Intelligent Communications",
+  metadataBase: configuredSiteUrl ? new URL(configuredSiteUrl) : undefined,
+  title: "FindFlow | AI Automation & Software Development",
   description:
-    "A next-generation global communications agency blending strategy, finance and digital.",
+    "FindFlow designs AI automation, SaaS products, custom software and high-performance websites for ambitious startups, SMEs and product teams across Europe.",
+  keywords: [
+    "AI automation company",
+    "software development company",
+    "SaaS development",
+    "custom software development",
+    "product design",
+    "web development Europe",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: configuredSiteUrl ? { canonical: "/" } : undefined,
+  openGraph: {
+    title: "FindFlow | AI Automation & Software Development",
+    description:
+      "AI automation, SaaS products, custom software and high-performance websites for ambitious European teams.",
+    type: "website",
+    siteName: "FindFlow",
+    url: configuredSiteUrl || undefined,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FindFlow | AI Automation & Software Development",
+    description:
+      "AI automation, SaaS products, custom software and high-performance websites for ambitious European teams.",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
