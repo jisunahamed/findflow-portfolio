@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AdminAuthBridge from "@/components/admin/AdminAuthBridge";
 import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
@@ -49,7 +50,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AdminAuthBridge />
+        {children}
+      </body>
     </html>
   );
 }

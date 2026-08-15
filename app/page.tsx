@@ -1,201 +1,76 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, MouseEvent, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import ProjectsShowcase from "@/components/ProjectsShowcase";
+import {
+  DEFAULT_SITE_CONTENT,
+  type AboutSegment,
+  type ServiceItem,
+  type SiteContent,
+} from "@/lib/default-site-content";
 
-const services = [
-  {
-    key: "automation",
-    glyph: "strategic",
-    title: "AI Automation",
-    description:
-      "Turn repetitive, error-prone work into dependable AI-assisted workflows built around your team and data.",
-    tags: [
-      "AI Agents",
-      "Workflow Automation",
-      "Internal Copilots",
-      "Document Processing",
-      "CRM & API Integration",
+function buildStructuredData(siteContent: SiteContent) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "FindFlow",
+        description:
+          "An AI automation and software development company serving startups, SMEs and product teams across Europe.",
+        areaServed: "Europe",
+        knowsAbout: siteContent.services.items.map((service) => service.title),
+      },
+      {
+        "@type": "Service",
+        name: "AI Automation and Software Development",
+        provider: { "@type": "Organization", name: "FindFlow" },
+        areaServed: "Europe",
+        serviceType: siteContent.services.items.map((service) => service.title),
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: siteContent.faq.items.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
     ],
-  },
-  {
-    key: "web",
-    glyph: "financial",
-    title: "Web Development",
-    description:
-      "Fast, accessible websites and web applications designed to communicate clearly and convert confidently.",
-    tags: [
-      "Marketing Websites",
-      "Web Applications",
-      "E-Commerce",
-      "Technical SEO",
-      "Performance",
-    ],
-  },
-  {
-    key: "design",
-    glyph: "digital",
-    title: "Product Design",
-    description:
-      "Make the right product easier to understand and use through research, prototyping and purposeful interface design.",
-    tags: [
-      "Product Strategy",
-      "UX Research",
-      "UI Design",
-      "Prototyping",
-      "Design Systems",
-    ],
-  },
-  {
-    key: "software",
-    glyph: "strategic",
-    title: "Software Development",
-    description:
-      "Custom software engineered for real operations, with maintainable architecture, testing and a clear handover.",
-    tags: [
-      "Custom Applications",
-      "Frontend & Backend",
-      "API Engineering",
-      "Cloud & DevOps",
-      "QA & Modernisation",
-    ],
-  },
-  {
-    key: "saas",
-    glyph: "financial",
-    title: "SaaS Development",
-    description:
-      "Move from a validated idea to a scalable SaaS product with one team covering product, design and engineering.",
-    tags: [
-      "MVP Development",
-      "Authentication",
-      "Billing",
-      "Multi-Tenant Systems",
-      "Analytics & Scale",
-    ],
-  },
-];
+  };
+}
 
-const principles = [
-  {
-    title: "Discovery before delivery",
-    text:
-      "We map the workflow, users, constraints and commercial goal before choosing the technology.",
-    marker: "01",
-  },
-  {
-    title: "One integrated team",
-    text:
-      "Product thinking, interface design and engineering stay connected from the first workshop to launch.",
-    marker: "02",
-  },
-  {
-    title: "Weekly proof of progress",
-    text:
-      "You see working software, clear decisions and the next milestone throughout the engagement.",
-    marker: "03",
-  },
-  {
-    title: "Privacy by design",
-    text:
-      "Data minimisation, access controls and responsible AI decisions are considered early, not added at the end.",
-    marker: "04",
-  },
-  {
-    title: "Accessible by default",
-    text:
-      "We design for keyboard access, readable interfaces, responsive devices and inclusive customer journeys.",
-    marker: "05",
-  },
-  {
-    title: "Built for ownership",
-    text:
-      "Clean documentation and a practical handover help your team operate and improve what we ship.",
-    marker: "06",
-  },
-];
+function renderAboutStatement(statement: AboutSegment[]) {
+  return statement.map((segment, index) =>
+    segment.emphasis ? <b key={`${segment.text}-${index}`}>{segment.text}</b> : <span key={`${segment.text}-${index}`}>{segment.text}</span>,
+  );
+}
 
-const faqs = [
-  {
-    question: "What does FindFlow build?",
-    answer:
-      "FindFlow designs and develops AI automations, high-performance websites, custom software and SaaS products. We can support the full journey from discovery and product design to engineering, launch and iteration.",
-  },
-  {
-    question: "Do you work with companies across Europe?",
-    answer:
-      "Yes. FindFlow is a remote-first partner for European startups, SMEs and product teams, with planned collaboration windows for UK and Central European working hours.",
-  },
-  {
-    question: "Can you automate an existing business process?",
-    answer:
-      "Yes. We begin by mapping the current workflow, data, tools and exceptions. We then identify where rules, integrations or AI can reduce manual work without removing necessary human oversight.",
-  },
-  {
-    question: "Can FindFlow build an MVP and continue after launch?",
-    answer:
-      "Yes. We can validate the scope, design the core experience, build the MVP and continue with analytics, product iteration, integrations and scaling after launch.",
-  },
-  {
-    question: "How do you approach GDPR, security and the EU AI Act?",
-    answer:
-      "We consider privacy, access, data minimisation, security and AI transparency during discovery and architecture. Final legal and regulatory compliance remains a shared process with your qualified legal or compliance advisers.",
-  },
-  {
-    question: "What happens first?",
-    answer:
-      "We start with a focused conversation about the business goal, users, current systems and constraints. You then receive a recommended scope, delivery approach and clear next milestone.",
-  },
-];
-
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      name: "FindFlow",
-      description:
-        "An AI automation and software development company serving startups, SMEs and product teams across Europe.",
-      areaServed: "Europe",
-      knowsAbout: [
-        "AI automation",
-        "Web development",
-        "Product design",
-        "Software development",
-        "SaaS development",
-      ],
-    },
-    {
-      "@type": "Service",
-      name: "AI Automation and Software Development",
-      provider: { "@type": "Organization", name: "FindFlow" },
-      areaServed: "Europe",
-      serviceType: services.map((service) => service.title),
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    },
-  ],
-};
-
-function Brand({ inverse = false }: { inverse?: boolean }) {
+function Brand({ inverse = false, onNavigate }: { inverse?: boolean; onNavigate?: () => void }) {
   return (
-    <a className={`brand ${inverse ? "brand--inverse" : ""}`} href="#home">
+    <a
+      className={`brand ${inverse ? "brand--inverse" : ""}`}
+      href="/"
+      onClick={(event) => {
+        if (!onNavigate) {
+          return;
+        }
+
+        event.preventDefault();
+        onNavigate();
+      }}
+    >
       <span className="brand__mark" aria-hidden="true">
         <i />
         <i />
       </span>
       <span className="brand__copy">
         <b>FindFlow</b>
-        <small>AI · Product · Software</small>
+        <small>AI &middot; Product &middot; Software</small>
       </span>
     </a>
   );
@@ -207,24 +82,130 @@ function ServiceGlyph({ type }: { type: string }) {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState("automation");
+  const [siteContent, setSiteContent] = useState<SiteContent>(DEFAULT_SITE_CONTENT);
+  const [selectedService, setSelectedService] = useState(DEFAULT_SITE_CONTENT.services.items[0]?.key ?? "automation");
   const [formStatus, setFormStatus] = useState("");
+
+  const services = siteContent.services.items;
+  const principles = siteContent.process.items;
+  const structuredData = useMemo(() => buildStructuredData(siteContent), [siteContent]);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadSiteContent() {
+      try {
+        const response = await fetch("/api/site-content", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Site content request failed with ${response.status}`);
+        }
+
+        const payload: { siteContent?: SiteContent } = await response.json();
+        if (active && payload.siteContent) {
+          setSiteContent(payload.siteContent);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    loadSiteContent();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!services.some((service) => service.key === selectedService)) {
+      setSelectedService(services[0]?.key ?? "automation");
+    }
+  }, [selectedService, services]);
+
+  useEffect(() => {
+    const queryTarget = new URLSearchParams(window.location.search).get("section");
+    const storedTarget = window.sessionStorage.getItem("findflow-scroll-target");
+    const target = storedTarget || queryTarget;
+
+    if (!target) {
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      const element = document.getElementById(target);
+      if (!element) {
+        return;
+      }
+
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState({}, "", "/");
+      if (storedTarget) {
+        window.sessionStorage.removeItem("findflow-scroll-target");
+      }
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   function closeMenu() {
     setMenuOpen(false);
   }
 
-  function submitForm(event: FormEvent<HTMLFormElement>) {
+  function navigateToSection(target: string) {
+    const element = document.getElementById(target);
+    closeMenu();
+
+    if (!element) {
+      window.history.replaceState({}, "", "/");
+      return;
+    }
+
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState({}, "", "/");
+  }
+
+  function handleNavigationClick(event: MouseEvent<HTMLAnchorElement>, target: string) {
+    event.preventDefault();
+    navigateToSection(target);
+  }
+
+  async function submitForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
-    setFormStatus(
-      "Your brief is ready. Connect a verified contact endpoint before the production launch.",
-    );
-    form.reset();
+
+    try {
+      setFormStatus("Saving your brief...");
+      const service = services.find((item) => item.key === selectedService);
+      const formData = new FormData(form);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: String(formData.get("firstName") ?? ""),
+          lastName: String(formData.get("lastName") ?? ""),
+          email: String(formData.get("email") ?? ""),
+          phone: String(formData.get("phone") ?? ""),
+          serviceKey: selectedService,
+          serviceLabel: service?.title ?? selectedService,
+          message: String(formData.get("message") ?? ""),
+        }),
+      });
+      const payload = await response.json();
+
+      if (!response.ok) {
+        throw new Error(payload.error || "Could not submit your project brief right now.");
+      }
+
+      setFormStatus(payload.message || "Your brief has been saved.");
+      form.reset();
+      setSelectedService(services[0]?.key ?? "automation");
+    } catch (error) {
+      setFormStatus(error instanceof Error ? error.message : "Could not submit your project brief right now.");
+    }
   }
 
   return (
@@ -235,43 +216,57 @@ export default function Home() {
       />
       <div className="intro-frame">
         <section className="hero-shell" id="home">
-        <header className="site-header">
-          <Brand />
-          <button
-            className="menu-button"
-            type="button"
-            aria-label="Toggle navigation"
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <span />
-            <span />
-          </button>
-          <nav className={menuOpen ? "main-nav main-nav--open" : "main-nav"} aria-label="Main navigation">
-            <a href="#home" onClick={closeMenu}>Home</a>
-            <a href="#services" onClick={closeMenu}>Services</a>
-            <a href="#case-studies" onClick={closeMenu}>What We Build</a>
-            <a href="#about" onClick={closeMenu}>About Us</a>
-            <a href="#process" onClick={closeMenu}>How We Work</a>
-            <a className="nav-cta" href="#contact" onClick={closeMenu}>Plan a Project</a>
-          </nav>
-        </header>
+          <header className="site-header">
+            <Brand onNavigate={() => navigateToSection("home")} />
+            <button
+              className="menu-button"
+              type="button"
+              aria-label="Toggle navigation"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              <span />
+              <span />
+            </button>
+            <nav className={menuOpen ? "main-nav main-nav--open" : "main-nav"} aria-label="Main navigation">
+              {siteContent.navigation.items.map((item) => (
+                <a key={item.label} href="/" onClick={(event) => handleNavigationClick(event, item.target)}>
+                  {item.label}
+                </a>
+              ))}
+              <a
+                className="nav-cta"
+                href="/"
+                onClick={(event) => handleNavigationClick(event, siteContent.navigation.ctaTarget)}
+              >
+                {siteContent.navigation.ctaLabel}
+              </a>
+            </nav>
+          </header>
 
-        <div className="hero-copy reveal">
-          <h1>
-            <span>AI Automation &amp;</span>
-            Software Built to Flow
-          </h1>
-          <p>
-            FindFlow helps European startups and SMEs automate operations, launch
-            SaaS products and build high-performance digital experiences with one
-            integrated product and engineering team.
-          </p>
-          <div className="hero-actions">
-            <a className="button button--primary" href="#contact">Plan Your Project</a>
-            <a className="text-link" href="#services">Explore Services <span>↗</span></a>
+          <div className="hero-copy reveal">
+            <h1>
+              <span>{siteContent.hero.titleLead}</span>
+              {siteContent.hero.titleMain}
+            </h1>
+            <p>{siteContent.hero.description}</p>
+            <div className="hero-actions">
+              <a
+                className="button button--primary"
+                href="/"
+                onClick={(event) => handleNavigationClick(event, siteContent.hero.primaryCtaTarget)}
+              >
+                {siteContent.hero.primaryCtaLabel}
+              </a>
+              <a
+                className="text-link"
+                href="/"
+                onClick={(event) => handleNavigationClick(event, siteContent.hero.secondaryCtaTarget)}
+              >
+                {siteContent.hero.secondaryCtaLabel} <span>-&gt;</span>
+              </a>
+            </div>
           </div>
-        </div>
 
           <div className="mosaic reveal">
             <div className="mosaic-column mosaic-column--one">
@@ -304,7 +299,7 @@ export default function Home() {
                   sizes="(max-width: 720px) 50vw, 22vw"
                   priority
                 />
-                <span className="date-chip">Discover → Deliver</span>
+                <span className="date-chip">Discover -&gt; Deliver</span>
                 <div className="photo-stat"><b>One team</b><small>Strategy, design &amp; engineering</small></div>
               </article>
               <article className="mosaic-card mosaic-card--figures">
@@ -358,7 +353,7 @@ export default function Home() {
               <article className="mosaic-card mosaic-card--lavender mosaic-card--growth">
                 <p className="mosaic-title">Software<br />Development</p>
                 <div className="chart" aria-hidden="true">
-                  <i /><i /><i /><i /><span>↗</span>
+                  <i /><i /><i /><i /><span>-&gt;</span>
                 </div>
                 <b className="growth-value">Scale</b>
               </article>
@@ -371,24 +366,12 @@ export default function Home() {
         </section>
 
         <section className="about-section section-pad" id="about">
-          <p className="eyebrow reveal">/ABOUT US</p>
-          <h2 className="about-statement reveal">
-            <span>FindFlow is an </span><b>AI-first product and software company</b><span> helping
-            European teams turn </span><b>manual work into intelligent workflows</b><span> and
-            promising ideas into </span><b>useful, scalable digital products</b><span>—with
-            strategy, design and engineering connected from day one.</span>
-          </h2>
-
+          <p className="eyebrow reveal">{siteContent.about.eyebrow}</p>
+          <h2 className="about-statement reveal">{renderAboutStatement(siteContent.about.statement)}</h2>
           <div className="values reveal">
-            {[
-              ["✦", "Outcome-led Discovery"],
-              ["✳", "Product Thinking"],
-              ["◀", "Privacy by Design"],
-              ["✕", "Reliable Engineering"],
-              ["◒", "Clear Partnership"],
-            ].map(([icon, label]) => (
-              <div className="value" key={label}>
-                <span>{icon}</span><small>{label}</small>
+            {siteContent.about.values.map((value) => (
+              <div className="value" key={value.label}>
+                <span>{value.icon}</span><small>{value.label}</small>
               </div>
             ))}
           </div>
@@ -409,9 +392,9 @@ export default function Home() {
       </section>
 
       <section className="services-section section-pad" id="services">
-        <p className="eyebrow reveal">/SERVICES</p>
+        <p className="eyebrow reveal">{siteContent.services.eyebrow}</p>
         <div className="services-grid">
-          {services.map((service) => (
+          {services.map((service: ServiceItem) => (
             <article className="service-column reveal" key={service.key}>
               <ServiceGlyph type={service.glyph} />
               <h3>{service.title}</h3>
@@ -424,45 +407,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="case-section" id="case-studies">
-        <div className="case-inner">
-          <p className="eyebrow eyebrow--light reveal">/WHAT WE BUILD</p>
-          <div className="case-intro reveal">
-            <h2>From the first workflow map to production software, one team owns the delivery path.</h2>
-            <a className="button button--outline" href="#contact">Plan Your Project <span>↗</span></a>
-          </div>
-          <div className="case-grid" id="more-work">
-            <article className="case-card reveal">
-              <div className="case-image notched-media">
-                <Image
-                  src="/phone.jpg"
-                  alt="An AI workflow and customer portal being reviewed on a laptop"
-                  fill
-                  sizes="(max-width: 720px) 100vw, 50vw"
-                />
-              </div>
-              <h3>Automate a High-Friction Operation</h3>
-              <p>Connect forms, documents, inboxes, CRM data and human approvals into one reliable AI-assisted workflow.</p>
-            </article>
-            <article className="case-card case-card--lower reveal">
-              <div className="case-image notched-media">
-                <Image
-                  src="/consulting.jpg"
-                  alt="A SaaS product discovery and planning workshop in progress"
-                  fill
-                  sizes="(max-width: 720px) 100vw, 50vw"
-                />
-              </div>
-              <h3>Launch a Market-Ready SaaS Product</h3>
-              <p>Shape the MVP, design the user journey and build the product foundation for launch, learning and scale.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+      <ProjectsShowcase
+        id="case-studies"
+        limit={9}
+        showFilters={false}
+        showViewAll
+        contactHref={`scroll:${siteContent.whatWeBuild.ctaTarget}`}
+        ctaLabel={siteContent.whatWeBuild.ctaLabel}
+        eyebrow={siteContent.whatWeBuild.eyebrow}
+        title={siteContent.whatWeBuild.title}
+      />
 
       <section className="testimonial-section" id="process">
         <div className="section-pad section-pad--dark">
-          <p className="eyebrow eyebrow--light reveal">/HOW WE WORK</p>
+          <p className="eyebrow eyebrow--light reveal">{siteContent.process.eyebrow}</p>
           <div className="testimonial-grid">
             {principles.map((principle, index) => (
               <article className="testimonial reveal" key={principle.title}>
@@ -480,13 +438,13 @@ export default function Home() {
 
       <section className="contact-section" id="contact">
         <div className="section-pad">
-          <p className="eyebrow reveal">/START A PROJECT</p>
+          <p className="eyebrow reveal">{siteContent.contact.eyebrow}</p>
           <div className="contact-panel reveal">
             <form className="contact-form" onSubmit={submitForm}>
-              <h2>Let&apos;s Map the Opportunity</h2>
-              <p>Tell us what is slowing the team down or what you want to launch. We&apos;ll turn it into a practical first scope.</p>
+              <h2>{siteContent.contact.title}</h2>
+              <p>{siteContent.contact.description}</p>
               <fieldset>
-                <legend>What do you need help with?</legend>
+                <legend>{siteContent.contact.legend}</legend>
                 <div className="service-selector">
                   {services.map((service) => (
                     <button
@@ -523,9 +481,9 @@ export default function Home() {
                 sizes="(max-width: 980px) 100vw, 50vw"
               />
               <div className="contact-info">
-                <div><small>Collaboration</small><b>UK &amp; CET overlap</b></div>
-                <div><small>Delivery</small><b>Remote-first</b></div>
-                <div><small>First Step</small><b>Focused discovery call</b></div>
+                {siteContent.contact.info.map((item) => (
+                  <div key={item.label}><small>{item.label}</small><b>{item.value}</b></div>
+                ))}
               </div>
             </aside>
           </div>
@@ -542,9 +500,9 @@ export default function Home() {
       </section>
 
       <section className="faq-section section-pad">
-        <p className="eyebrow">/QUESTIONS</p>
+        <p className="eyebrow">{siteContent.faq.eyebrow}</p>
         <div className="faq-list">
-          {faqs.map((faq, index) => (
+          {siteContent.faq.items.map((faq, index) => (
             <details key={faq.question} open={index === 0}>
               <summary>{faq.question}<span aria-hidden="true" /></summary>
               <p>{faq.answer}</p>
@@ -555,15 +513,21 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="footer-main">
-          <Brand inverse />
-          <p>AI automation and software development for ambitious European teams.</p>
-          <a className="footer-cta" href="#contact">Plan your project <span>↗</span></a>
+          <Brand inverse onNavigate={() => navigateToSection("home")} />
+          <p>{siteContent.footer.description}</p>
+          <a className="footer-cta" href="/" onClick={(event) => handleNavigationClick(event, siteContent.navigation.ctaTarget)}>
+            {siteContent.footer.ctaLabel} <span>-&gt;</span>
+          </a>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 FindFlow. All rights reserved.</span>
-          <span>Privacy by design · Accessible delivery</span>
+          <span>{siteContent.footer.copyright}</span>
+          <span>{siteContent.footer.policyText}</span>
         </div>
       </footer>
     </main>
   );
 }
+
+
+
+

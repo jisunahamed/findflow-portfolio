@@ -1,0 +1,450 @@
+[
+  {
+    "id": "1",
+    "order": 1,
+    "title": "AI Chatbot Development",
+    "status": "published",
+    "category": "ai-automation",
+    "featured": true,
+    "tags": [
+      "n8n",
+      "Custom API",
+      "js"
+    ],
+    "imageUrl": "https://res.cloudinary.com/dnqzmx3ag/image/upload/v1770744622/inmetech_uploads/xnd8jcd21kpy098rvkol.png",
+    "imageUrls": [
+      "https://res.cloudinary.com/dnqzmx3ag/image/upload/v1770744622/inmetech_uploads/xnd8jcd21kpy098rvkol.png"
+    ],
+    "description": "This project involved building an advanced AI automation system for Education & Migration Service (WEMS) to manage lead generation and student support on Facebook Messenger and WhatsApp 24/7. The system uses natural language processing, contextual awareness, and RAG technology to deliver accurate, human-like responses based strictly on verified client data. It captures student information during conversations, analyzes voice notes and images, and automatically syncs qualified leads to the CRM—creating a seamless, intelligent, and scalable solution that improves engagement and conversion rates.",
+    "fullDescription": "This project involved the development of an advanced AI automation system for Education & Migration Service (WEMS), designed to handle lead generation and student support across Facebook Messenger and WhatsApp 24/7. The system delivers human-like conversational experiences using natural language processing and contextual awareness, allowing it to understand complex queries, correct user input, and respond accurately based on conversation history. It integrates voice note and image analysis to process documents and screenshots shared by students, while Retrieval-Augmented Generation (RAG) ensures that all responses are generated strictly from verified, client-provided data. The automation strategically captures student information such as names and phone numbers during conversations and instantly syncs qualified leads with the client’s CRM. To enhance user experience, the system includes human-behavior indicators like typing status and read receipts, resulting in a seamless, intelligent, and scalable automation solution that improves engagement, operational efficiency, and lead conversion.",
+    "projectLink": "",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "1770917678326",
+    "order": 4,
+    "title": "AI Short Video Generator (Fully Automated with n8n)",
+    "status": "published",
+    "category": "others",
+    "featured": true,
+    "tags": [
+      "n8n",
+      "jsoncut",
+      "gemini",
+      "nano banana"
+    ],
+    "imageUrl": "https://i.ibb.co.com/x88xcfZg/Screenshot-2026-02-12-233055.png",
+    "imageUrls": [
+      "https://i.ibb.co.com/x88xcfZg/Screenshot-2026-02-12-233055.png"
+    ],
+    "description": "Our Low-Cost AI Short Video Generator allows you to create complete 20–40 second videos using just three simple inputs: topic, setting, and visual style. Powered by n8n automation and advanced AI models, the system automatically generates visuals, script, voice narration, background audio, branding elements, and even uploads the final video—making professional short-form content creation faster, smarter, and more affordable than ever.",
+    "fullDescription": "Our Low-Cost AI Short Video Generator is a fully automated content creation system built using n8n and advanced AI technologies. By simply providing three inputs—video topic, scene setting, and visual style—the system automatically generates a structured script, AI-powered voice narration, background visuals, text overlays, music, and brand elements such as logos or watermarks. The workflow intelligently combines all assets into a polished 20–40 second short video using automated rendering and transition effects. Designed for efficiency and scalability, this solution significantly reduces production costs while maintaining meaningful, engaging content output. It is ideal for businesses, agencies, and personal brands looking to produce consistent short-form videos without manual editing or high production expenses.",
+    "projectLink": "",
+    "youtubeUrl": "https://youtu.be/QjipeX4EQAo"
+  },
+  {
+    "id": "1770919641682",
+    "order": 5,
+    "title": "Ai Faceless Video Generator",
+    "status": "published",
+    "category": "ai-automation",
+    "featured": true,
+    "tags": [
+      "n8n",
+      "veo3.1",
+      "custom logic"
+    ],
+    "imageUrl": "https://i.ibb.co.com/0jG4dMkZ/Screenshot-2026-02-13-000849.png",
+    "imageUrls": [
+      "https://i.ibb.co.com/0jG4dMkZ/Screenshot-2026-02-13-000849.png"
+    ],
+    "description": "This is a fully automated AI system built with n8n that transforms a simple topic into a cinematic scene prompt using strict JSON enforcement and structured validation. The workflow pulls data from Airtable, generates scenes using Google Gemini, enforces clean JSON formatting through an AI agent, validates and parses outputs using custom JavaScript, and maintains full retry and polling logic with proper error handling.",
+    "fullDescription": "This is a fully automated AI system built with n8n that transforms a simple topic into a cinematic scene prompt using strict JSON enforcement and structured validation. The workflow pulls data from Airtable, generates scenes using Google Gemini, enforces clean JSON formatting through an AI agent, validates and parses outputs using custom JavaScript, and maintains full retry and polling logic with proper error handling.",
+    "projectLink": "",
+    "youtubeUrl": "https://youtu.be/csHJ7pj9HvE"
+  },
+  {
+    "id": "1771248360413",
+    "order": 7,
+    "title": "Real Estate Research Report Automation System",
+    "status": "published",
+    "category": "others",
+    "featured": true,
+    "tags": [
+      "n8n"
+    ],
+    "imageUrl": "https://i.ibb.co.com/LdpBH5JB/Screenshot-2026-02-16-192311.png",
+    "imageUrls": [
+      "https://i.ibb.co.com/LdpBH5JB/Screenshot-2026-02-16-192311.png"
+    ],
+    "description": "I built an automated real estate research reporting system using Exa AI, n8n, and Presenton. Exa AI collects real-time market data, listings, and contextual insights from the web. The data is then structured inside n8n into sections like overview, pricing, listings, and key points before being sent to a pre-designed template in Presenton. The result is a clean, consistent, and fully automated research report with no manual formatting required—ideal for recurring client updates and market analysis.",
+    "fullDescription": "This project is a fully automated real estate research report generation system designed to eliminate manual research, formatting, and slide design work. I use Exa AI to gather real-time market information, including pricing trends, listings, and contextual market insights from the web. The collected data flows into n8n, where it is organized into structured sections such as overview, pricing analysis, listings, and key insights. After structuring, the content is automatically sent to Presenton, where a pre-configured real estate research template ensures that all information is placed correctly into professionally designed slides. The final output is a clean, consistent, and presentation-ready report every time, making it highly efficient for recurring reports, investor updates, and client presentations while significantly reducing turnaround time.",
+    "projectLink": "",
+    "youtubeUrl": "https://youtu.be/yfQg06zCGws"
+  },
+  {
+    "id": "1771249908229",
+    "order": 8,
+    "title": "Sales Report from Google Sheets",
+    "status": "published",
+    "category": "others",
+    "featured": true,
+    "tags": [
+      "n8n",
+      "sheets"
+    ],
+    "imageUrl": "https://i.ibb.co.com/S4vkJbmW/Screenshot-2026-02-16-195238.png",
+    "imageUrls": [
+      "https://i.ibb.co.com/S4vkJbmW/Screenshot-2026-02-16-195238.png"
+    ],
+    "description": "I built this automation to eliminate repetitive weekly sales reporting work. Sales data was already stored in Google Sheets, but generating executive updates required manually copying tables, writing summaries, and formatting slides every time. Using n8n, I automated the entire reporting workflow. The system now runs on schedule and generates weekly and monthly reports with minimal manual effort. The architecture is modular, allowing changes to data sources, prompts, or output formats without breaking the flow.",
+    "fullDescription": "This project was built to eliminate repetitive manual sales reporting tasks. Although sales data was consistently stored in Google Sheets, generating executive or sales update reports required repeating the same workflow every week — copying tables, writing summaries, and adjusting slide formatting manually.\n\nTo solve this, I designed a fully automated reporting system using n8n as the orchestration layer. The workflow pulls structured sales data directly from Google Sheets, processes it, formats summaries, and generates clean reports automatically.\n\nOne of the strongest aspects of this setup is its modular architecture. n8n handles orchestration only, which means the data source, prompts, or final output format can be modified independently without breaking the overall workflow.\n\nThe system now runs on a schedule, making weekly and monthly reporting nearly hands-off while maintaining consistency, scalability, and flexibility.",
+    "projectLink": "",
+    "youtubeUrl": "https://youtu.be/yfQg06zCGws"
+  },
+  {
+    "id": "1771772764631",
+    "order": 9,
+    "title": "WhatsApp Business Automation",
+    "status": "published",
+    "category": "others",
+    "featured": true,
+    "tags": [
+      "n8n",
+      "whatsapp",
+      "wasenderapi"
+    ],
+    "imageUrl": "https://i.ibb.co.com/DckZRMm/Screenshot-2026-02-22-205242.png",
+    "imageUrls": [
+      "https://i.ibb.co.com/DckZRMm/Screenshot-2026-02-22-205242.png"
+    ],
+    "description": "I built an AI-powered WhatsApp automation system that analyzes customer text, voice, and image messages and automatically responds with relevant product, service, or company information. The system integrates with a database, CRM/Google Sheets, and supports human handover when needed. It streamlines customer communication, lead collection, and support — all through an automated workflow powered by AI.",
+    "fullDescription": "I developed a complete AI-driven WhatsApp automation workflow designed to intelligently handle customer interactions across multiple message formats — including text, voice messages, and images.\n\nThe system automatically processes incoming messages, transcribes voice notes, analyzes images, and understands customer intent using AI models. Based on the request, it retrieves relevant product details, service information, or company data from a structured database and delivers accurate responses instantly.\n\nKey Features:\n\nMulti-format message handling (Text, Voice, Image)\n\nVoice transcription and analysis\n\nImage understanding and contextual response\n\nDynamic information retrieval from database\n\nAutomated lead capture into CRM / Google Sheets\n\nHuman agent handover system\n\nModerator notification when escalation is required\n\nFully automated text-based response system\n\nIf a customer requests to speak with a human agent, the system automatically forwards the customer’s number and details to the business owner or moderator for manual follow-up.\n\nThis automation significantly reduces response time, improves customer experience, automates lead management, and ensures no inquiry goes unanswered.\n\nThe system is built using AI agents, database integration, workflow automation, and WhatsApp API integration to create a scalable and intelligent customer communication solution.",
+    "projectLink": "",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "1772212849947",
+    "order": 12,
+    "title": "n8n Community node Courier",
+    "status": "published",
+    "category": "others",
+    "featured": true,
+    "tags": [],
+    "imageUrl": "https://i.ibb.co.com/FkdK9rZP/Screenshot-2026-02-27-233448.png",
+    "imageUrls": [
+      "https://i.ibb.co.com/FkdK9rZP/Screenshot-2026-02-27-233448.png"
+    ],
+    "description": "I built an NPM package that simplifies courier integrations for n8n community Node.js projects in Bangladesh. It provides a clean, reusable interface for connecting with services like Steadfast and RedX, reducing repetitive setup work and making delivery workflows faster to implement.",
+    "fullDescription": "Courier integrations can be messy and time-consuming—especially when working with multiple Bangladeshi delivery providers and inconsistent APIs. To solve this, I created an open-source NPM package that standardizes courier integration for InHertent/“Inheten” community Node.js applications. The package offers a simple, developer-friendly API to connect with couriers like Steadfast and RedX (with more providers planned), so developers can create shipments, manage delivery-related operations, and handle common edge cases without rewriting the same integration logic in every project. The goal is to make courier setup plug-and-play for Bangladeshi eCommerce and logistics projects, improving reliability, saving development time, and keeping integrations clean and maintainable.",
+    "projectLink": "https://www.npmjs.com/package/@jisunahamed/n8n-nodes-courier",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "1782220440270",
+    "order": 13,
+    "title": "Advanced Whatsapp Agent",
+    "status": "published",
+    "category": "ai-automation",
+    "featured": true,
+    "tags": [
+      "n8n",
+      "whatsapp",
+      "openai",
+      "supabase",
+      "crm"
+    ],
+    "imageUrl": "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/Screenshot%202026-06-23%20191520.png",
+    "imageUrls": [
+      "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/Screenshot%202026-06-23%20191520.png"
+    ],
+    "description": "An advanced AI-powered WhatsApp Agent built for a Bangladesh-based retail business with 40+ products and multiple color and size variants. The system can understand and respond to text, voice messages, images, and long-form conversations, providing customers with a seamless and human-like shopping experience. It intelligently handles product inquiries, order collection, customer support, and can automatically transfer conversations to human agents when needed.",
+    "fullDescription": "Developed a highly advanced AI WhatsApp Agent for a retail business managing over 40+ products, each with multiple color and size variations. The solution was designed to automate customer communication while maintaining a natural, human-like conversation experience.\n\nKey capabilities include:\n\nMultimodal Communication\nSupports text, voice messages, images, and long-form conversations.\nUnderstands customer intent across different communication formats.\nHuman-Like AI Conversations\nProvides natural and context-aware responses.\nMaintains conversation flow and customer engagement throughout the interaction.\nExternal AI Control\nAI can be enabled or disabled dynamically from outside the workflow without requiring workflow modifications.\nAllows businesses to switch between automated and manual operations instantly.\nSmart Product Assistance\nHandles inquiries for 100+ products with complex color and size variants.\nHelps customers find suitable products based on their requirements.\nHuman Agent Escalation\nAutomatically identifies situations that require human intervention.\nSeamlessly transfers conversations to a human agent when necessary.\nAutomated Order Management\nCollects customer information and order details.\nSends orders directly to a centralized dashboard for processing and fulfillment.\nThird-Party WhatsApp API Integration\nBuilt using a third-party WhatsApp API infrastructure.\nEnsures reliable message delivery and scalable customer support operations.\nBusiness Automation\nReduces manual workload.\nProvides 24/7 customer assistance.\nImproves response time, customer satisfaction, and operational efficiency.\n\nThis solution combines AI automation, intelligent customer support, product discovery, and order management into a single WhatsApp-based customer engagement system, enabling businesses to scale customer interactions without sacrificing service quality.",
+    "projectLink": "",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "AI-Powered Lead Generation & Outreach Engine-1",
+    "order": 1,
+    "title": "AI-Powered Lead Generation & Outreach Engine",
+    "status": "published",
+    "category": "ai-automation",
+    "featured": false,
+    "tags": [
+      "n8n",
+      "Lead generation",
+      "Dashboard",
+      "LinkedIn scrape",
+      "Indeed scrape",
+      "Google scrape",
+      "AI agents"
+    ],
+    "imageUrl": "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/backend-workflow.png",
+    "imageUrls": [
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/backend-workflow.png",
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/dashboard-overview.png",
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/scrape-action-menu.png",
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/dashboard-modal.png",
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/google-search-scrape-form.png",
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/indeed-job-scrape-form.png",
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/linkedin-scrape-form.png"
+    ],
+    "description": "Designed and deployed a massive end-to-end AI-powered lead generation and outreach engine with 270+ n8n nodes. The system combines a complex backend workflow with a frontend Lead Intelligence Dashboard, giving full control over LinkedIn, Google Search, and Indeed scraping, qualification, SQL/MQL routing, cold outreach, reporting, and operational handoff across the funnel.",
+    "fullDescription": "Backend workflow + frontend dashboard control layer for a complete lead intelligence system",
+    "projectLink": "",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "2",
+    "order": 2,
+    "title": "Go-inmeTech",
+    "status": "published",
+    "category": "vibe-project",
+    "featured": false,
+    "tags": [
+      "React",
+      "n8n",
+      "postgres"
+    ],
+    "imageUrl": "https://res.cloudinary.com/dnqzmx3ag/image/upload/v1770831782/inmetech_uploads/vx0ub4xulurbhje7je6l.png",
+    "imageUrls": [
+      "https://res.cloudinary.com/dnqzmx3ag/image/upload/v1770831782/inmetech_uploads/vx0ub4xulurbhje7je6l.png"
+    ],
+    "description": "InmeTech AI (go.inmetech.com) is a subscription-based automation platform that helps businesses manage Facebook Pages and customer conversations 24/7. It provides instant replies, automated order management, lead capture, and smart engagement without any coding. Powered by advanced AI and workflow automation, the system understands customer intent, responds naturally, and handles repetitive tasks automatically. With continuous updates, reliable hosting, and performance optimization, InmeTech AI enables businesses to scale efficiently while improving customer support and boosting conversions.",
+    "fullDescription": "InmeTech AI https://go.inmetech.com is a subscription-based automation platform designed to help businesses manage their Facebook Pages and customer conversations effortlessly. The system operates 24/7, providing instant replies, automated order management, lead capture, and smart customer engagement without requiring any coding knowledge. Built with advanced AI and workflow automation, the platform understands customer intent, responds naturally, and handles repetitive tasks automatically. From replying to comments and messages to collecting customer data and creating orders, everything runs through intelligent automation designed to increase efficiency and boost sales. The monthly service model ensures continuous updates, performance optimization, and reliable hosting, so businesses can focus on growth while InmeTech AI handles communication and operational workflows in the background. It is a scalable solution ideal for e-commerce brands, service providers, and online businesses looking to automate customer support and maximize conversions.",
+    "projectLink": "https://go.inmetech.com",
+    "youtubeUrl": "https://youtu.be/rBsZpsHGj68"
+  },
+  {
+    "id": "AI Knowledge Workspace-2",
+    "order": 2,
+    "title": "AI Knowledge Workspace",
+    "status": "published",
+    "category": "ai-automation",
+    "featured": false,
+    "tags": [
+      "Open WebUI",
+      "GPT-like dashboard",
+      "n8n",
+      "Weaviate",
+      "Docker",
+      "RAG",
+      "Slack API"
+    ],
+    "imageUrl": "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/gpt-like-dashboard.png",
+    "imageUrls": [
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/gpt-like-dashboard.png",
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/workspace-system-overview.png",
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/document-ingestion-workflow.png",
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/multi-tenant-ai-engine.png"
+    ],
+    "description": "Built a scalable multi-tenant AI knowledge workspace with a custom GPT-like Open WebUI dashboard, n8n workflow backend, Weaviate vector search, and Docker deployment on a VPS. The system supports chat workspaces, document ingestion from PDF/TXT knowledge bases, RAG-based contextual replies, conversation memory, and admin notifications through Email/Slack for low-confidence or failed retrieval cases.",
+    "fullDescription": "Frontend GPT-style workspace + backend RAG engine for multi-tenant knowledge operations",
+    "projectLink": "",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "3",
+    "order": 3,
+    "title": "InmeTech",
+    "status": "published",
+    "category": "vibe-project",
+    "featured": false,
+    "tags": [
+      "nodejs",
+      "postgres",
+      "cloudinary"
+    ],
+    "imageUrl": "https://i.ibb.co.com/kghnKMtd/Screenshot-2026-02-11-234739.png",
+    "imageUrls": [
+      "https://i.ibb.co.com/kghnKMtd/Screenshot-2026-02-11-234739.png"
+    ],
+    "description": "InmeTech is a results-driven AI automation agency specializing in Custom Automation, Lead Generation, and AI Chatbot Development.\nWe help businesses streamline operations, capture high-quality leads, and automate customer interactions using intelligent workflows and advanced AI systems. Our solutions are scalable, efficient, and built to drive measurable growth.",
+    "fullDescription": "InmeTech is a modern AI automation agency focused on building intelligent, high-performance digital systems for growing businesses. We specialize in Custom Automation, Lead Generation, and AI Chatbot Development, helping companies eliminate repetitive tasks, streamline workflows, and maximize operational efficiency.",
+    "projectLink": "https://inmetech.com",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "Real Estate AI Operations Website-3",
+    "order": 3,
+    "title": "Real Estate AI Operations Website",
+    "status": "published",
+    "category": "web",
+    "featured": false,
+    "tags": [
+      "Web project",
+      "Real estate AI",
+      "Service positioning",
+      "Lead response",
+      "CRM follow-up"
+    ],
+    "imageUrl": "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/real-estate-operations-website.png",
+    "imageUrls": [
+      "https://xbdpdvbvrqzofmckgywc.supabase.co/storage/v1/object/public/images/real-estate-operations-website.png"
+    ],
+    "description": "Built a polished real-estate AI operations website that communicates automated lead response, CRM follow-up, property viewing bookings, and operator dashboards. Included as proof of frontend execution, buyer-facing service positioning, and ability to package complex automation into a clear business experience.",
+    "fullDescription": "Shows frontend craft, offer clarity, and business-facing automation positioning",
+    "projectLink": "",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "1770920057201",
+    "order": 6,
+    "title": "Automated DESCO Meter Balance Alert",
+    "status": "published",
+    "category": "others",
+    "featured": false,
+    "tags": [
+      "n8n",
+      "telegram bot"
+    ],
+    "imageUrl": "https://i.ibb.co.com/S4fKhcK5/Chat-GPT-Image-Feb-13-2026-12-20-02-AM.png",
+    "imageUrls": [
+      "https://i.ibb.co.com/S4fKhcK5/Chat-GPT-Image-Feb-13-2026-12-20-02-AM.png"
+    ],
+    "description": "I built an automated system that checks my DESCO prepaid meter balance and sends it directly to my mobile every day at 10 AM. No manual login, no checking apps—just a scheduled workflow that fetches the balance data and delivers it as a message automatically. A simple but powerful example of how automation can solve everyday problems efficiently.",
+    "fullDescription": "I built an automated system that checks my DESCO prepaid meter balance and sends it directly to my mobile every day at 10 AM. No manual login, no checking apps—just a scheduled workflow that fetches the balance data and delivers it as a message automatically. A simple but powerful example of how automation can solve everyday problems efficiently.",
+    "projectLink": "",
+    "youtubeUrl": "https://youtu.be/vysKbtZWBaU"
+  },
+  {
+    "id": "1772212849499",
+    "order": 10,
+    "title": "ai.inmetech.com",
+    "status": "published",
+    "category": "vibe-project",
+    "featured": false,
+    "tags": [
+      "vibe code",
+      "node js",
+      "react"
+    ],
+    "imageUrl": "https://i.ibb.co.com/SwC4Y8Kx/Screenshot-2026-02-27-232450.png",
+    "imageUrls": [
+      "https://i.ibb.co.com/SwC4Y8Kx/Screenshot-2026-02-27-232450.png"
+    ],
+    "description": "I built a premium API marketplace and user dashboard that lets customers purchase and manage OpenAI and OpenRouter API packages. Users can top up and buy plans using local payment methods like bKash and Nagad, then monitor their API usage, keys, and plan details directly from a clean dashboard. An admin panel powers the entire system, allowing full control over users, orders, plans, payments, and usage management.",
+    "fullDescription": "This project is a full-featured premium API marketplace with a modern user dashboard and a powerful admin panel designed to simplify selling and managing AI API access. The platform offers OpenAI and OpenRouter API packages that users can purchase through popular Bangladeshi payment gateways such as bKash and Nagad. After purchase, users get access to a dedicated dashboard where they can view their active plans, track usage analytics, manage API keys/credentials, and upgrade to other packages based on their needs. On the backend, an admin panel enables end-to-end management of the platform—creating and updating plans, verifying payments, managing users, monitoring overall usage, handling order history, and controlling system settings. The goal of the product is to make premium API access easy to buy, easy to manage, and fully trackable for both users and administrators.",
+    "projectLink": "https://ai.inmetech.com",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "1772212849706",
+    "order": 11,
+    "title": "Hand-tracking",
+    "status": "published",
+    "category": "vibe-project",
+    "featured": false,
+    "tags": [
+      "WebGL + Three.js",
+      "ODE attractors + RK4 integration",
+      "MediaPipe hand tracking",
+      "Postprocessing",
+      "Next.js"
+    ],
+    "imageUrl": "https://i.ibb.co.com/jkYkv8yF/Screenshot-2026-02-27-232846.png",
+    "imageUrls": [
+      "https://i.ibb.co.com/jkYkv8yF/Screenshot-2026-02-27-232846.png"
+    ],
+    "description": "I built an interactive hand-tracking visual experience that uses real-time camera input to detect and follow hand movement. The project features multiple generative visual effects that respond smoothly to gestures—moving as the hand moves and switching modes when a fist is detected—creating a playful, motion-controlled digital artwork.",
+    "fullDescription": "This project is a real-time, camera-based hand-tracking experience designed to turn hand gestures into dynamic generative visuals. It requests webcam access, detects the user’s hand, and continuously maps hand position and motion to on-screen particle effects and attractor-style animations. As the user moves their hand, the visuals orbit, flow, and react in a responsive way, creating an immersive “touchless” interaction. The experience includes multiple visual modes/effects that can be cycled through using a simple gesture—closing the hand into a fist triggers a mode change—so users can explore different styles without any UI controls. Overall, it’s a creative coding project that combines computer vision, gesture-based interaction, and real-time graphics to produce an engaging, futuristic visual playground.",
+    "projectLink": "https://vibe-two-inky.vercel.app/",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "1782220525776",
+    "order": 14,
+    "title": "Social business brain",
+    "status": "published",
+    "category": "others",
+    "featured": false,
+    "tags": [
+      "n8n",
+      "frontend",
+      "open router",
+      "large data handling"
+    ],
+    "imageUrl": "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/Screenshot%202026-06-23%20193028.png",
+    "imageUrls": [
+      "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/Screenshot%202026-06-23%20193028.png"
+    ],
+    "description": "A custom-built AI-powered Social Business Brain platform designed to provide instant access to over 7,000 curated social business knowledge records through a ChatGPT-like interface. The project included both frontend and backend development, featuring advanced Retrieval-Augmented Generation (RAG), reranking, prompt engineering, embedding-based search, model fallbacks, and an intuitive futuristic user experience.",
+    "fullDescription": "Built a complete AI-powered Social Business Brain platform for a client, covering both the frontend user experience and backend AI infrastructure. The platform was designed to serve as a centralized knowledge assistant for social business-related information, enabling users to interact with a large-scale knowledge base through a clean, modern, and ChatGPT-inspired interface.\n\nThe system leverages a database containing over 7,000 curated social business knowledge records, allowing users to retrieve highly relevant information through natural language conversations.\n\nKey Features\n\nAI-Powered Knowledge Assistant\n\nProvides instant access to 7,000+ social business knowledge records.\nDelivers conversational responses through a ChatGPT-style experience.\nSupports natural language queries and contextual conversations.\n\nAdvanced RAG Architecture\n\nImplemented Retrieval-Augmented Generation (RAG) workflows.\nOptimized information retrieval for higher response accuracy.\nCombines semantic search with AI-generated answers.\n\nEmbedding-Based Knowledge Retrieval\n\nManually processed and embedded large volumes of knowledge data.\nStructured and optimized embeddings for efficient semantic search.\nImproved retrieval quality and contextual relevance.\n\nIntelligent Reranking System\n\nUtilized reranking techniques to improve search result precision.\nEnsures the most relevant knowledge is prioritized before response generation.\n\nModel Fallback Mechanism\n\nImplemented multi-model fallback strategies for reliability.\nMaintains system availability and response consistency during model failures or limitations.\n\nAdvanced Prompt Engineering\n\nDesigned sophisticated instruction frameworks and prompt engineering workflows.\nImproved response quality, consistency, and domain-specific accuracy.\nEnhanced AI reasoning and knowledge utilization.\n\nModern ChatGPT-Inspired User Interface\n\nDeveloped a clean, intuitive, and futuristic user experience.\nDesigned with familiar ChatGPT-style interaction patterns.\nFocused on usability, accessibility, and user engagement.\n\nFull-Stack Development\n\nEnd-to-end ownership of both frontend and backend systems.\nIntegrated AI infrastructure, database architecture, retrieval pipelines, and user interface into a unified platform.\nTechnologies & Concepts\nRetrieval-Augmented Generation (RAG)\nVector Embeddings\nSemantic Search\nAI Reranking\nPrompt Engineering\nLarge Language Models (LLMs)\nModel Fallback Systems\nKnowledge Base Architecture\nFull-Stack AI Application Development\nChatGPT-Style Conversational Interface\n\nThis project demonstrates advanced expertise in AI application development, knowledge retrieval systems, prompt engineering, and scalable conversational AI architecture, delivering a powerful and user-friendly platform for accessing specialized social business knowledge.",
+    "projectLink": "",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "1782220526286",
+    "order": 15,
+    "title": "Docker container management",
+    "status": "published",
+    "category": "ai-automation",
+    "featured": false,
+    "tags": [
+      "n8n",
+      "docker"
+    ],
+    "imageUrl": "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/Screenshot%202026-06-23%20193452.png",
+    "imageUrls": [
+      "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/Screenshot%202026-06-23%20193452.png"
+    ],
+    "description": "Designed and deployed a centralized Docker infrastructure management system using n8n, enabling automated monitoring, control, and orchestration of multiple Docker containers from a single environment. The solution simplified container operations, reduced manual intervention, and improved system administration efficiency.",
+    "fullDescription": "Built a centralized Docker management and automation system using n8n, hosted within the same infrastructure environment to streamline the management of multiple Docker containers and services.\n\nThe system was designed to automate routine operational tasks, simplify container administration, and provide a scalable approach for managing distributed services across the Docker ecosystem.\n\nKey Features\n\nCentralized Container Management\n\nManaged multiple Docker containers from a unified automation platform.\nReduced the need for manual server administration and repetitive maintenance tasks.\n\nWorkflow-Based Infrastructure Automation\n\nDeveloped automated workflows for container monitoring, service management, and operational processes.\nEnabled streamlined infrastructure operations through visual automation.\n\nDocker Environment Orchestration\n\nCoordinated interactions between multiple containers and services.\nAutomated service-level operations and infrastructure workflows.\n\nMonitoring & Operational Control\n\nProvided automated visibility into container states and system processes.\nSimplified troubleshooting and routine maintenance activities.\n\nScalable Infrastructure Design\n\nBuilt with scalability and maintainability in mind.\nAllowed additional services and containers to be integrated with minimal configuration changes.\n\nSelf-Hosted Deployment\n\nHosted n8n within the same server environment to ensure low-latency communication with Docker services.\nMaintained full control over infrastructure, security, and automation workflows.\nTechnologies & Concepts\nDocker\nContainer Management\nInfrastructure Automation\nn8n\nSelf-Hosted Systems\nWorkflow Automation\nDevOps Operations\nService Orchestration\nServer Administration\nProcess Automation\n\nThis project demonstrates practical DevOps and automation expertise by combining Docker containerization with workflow-driven infrastructure management, creating a centralized system for efficient service operations and maintenance.",
+    "projectLink": "",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "1782222156632",
+    "order": 16,
+    "title": "API and API users management",
+    "status": "published",
+    "category": "others",
+    "featured": false,
+    "tags": [
+      "n8n",
+      "api"
+    ],
+    "imageUrl": "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/Screenshot%202026-06-23%20194121.png",
+    "imageUrls": [
+      "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/Screenshot%202026-06-23%20194121.png"
+    ],
+    "description": "Managed and maintained a comprehensive OpenAI administration and API management platform, responsible for monitoring API usage, tracking token consumption and costs, managing user access, enforcing usage limits, evaluating model performance, and supporting the integration of new AI models and services across multiple applications.",
+    "fullDescription": "Worked on the administration, maintenance, and operational management of an OpenAI-powered platform designed to support multiple applications, users, and AI services from a centralized management environment.\n\nThe platform provided complete visibility into AI operations, enabling administrators to monitor API usage, analyze costs, manage users, control access, and evaluate model performance across different projects and environments.\n\nKey Responsibilities & Features\n\nAPI Usage Management\n\nMonitored API activity across multiple applications and users.\nTracked request volumes, usage patterns, and system performance.\nMaintained operational stability for AI-powered services.\n\nToken & Cost Analytics\n\nMonitored token consumption across different models and projects.\nAnalyzed usage trends and associated operational costs.\nHelped optimize resource utilization and reduce unnecessary expenses.\n\nUser & Access Management\n\nManaged user access and permissions.\nConfigured usage restrictions and account-level controls.\nSupported secure and scalable platform administration.\n\nRate Limits & Usage Controls\n\nConfigured and maintained API usage limits.\nImplemented controls to prevent abuse and excessive consumption.\nEnsured fair resource allocation across users and applications.\n\nModel Performance Monitoring\n\nEvaluated the performance of different AI models.\nCompared model efficiency, response quality, and operational costs.\nAssisted in selecting the most suitable models for specific use cases.\n\nNew Model & API Integration\n\nSupported the onboarding and configuration of newly released AI models and APIs.\nTested integrations and ensured compatibility with existing systems.\nManaged updates and platform enhancements as new capabilities became available.\n\nOperational Dashboard & Reporting\n\nWorked with dashboards and reporting systems that provided real-time insights into platform activity.\nMonitored key metrics including usage, costs, performance, and system health.\n\nAI Platform Administration\n\nMaintained overall platform operations and configuration.\nAssisted with troubleshooting, optimization, and ongoing maintenance.\nSupported the scalability and reliability of AI-powered applications.\nTechnologies & Concepts\nOpenAI APIs\nLLM Operations (LLMOps)\nAPI Management\nUsage Analytics\nToken Monitoring\nCost Optimization\nAccess Control\nRate Limiting\nAI Infrastructure Management\nModel Evaluation\nPlatform Administration\nOperational Monitoring\nDashboard & Reporting Systems\n\nThis project provided hands-on experience in managing AI infrastructure at scale, combining operational oversight, cost management, performance monitoring, and platform administration to support reliable and efficient AI-powered services.",
+    "projectLink": "",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "1782222561243",
+    "order": 17,
+    "title": "Chatbot for websites",
+    "status": "published",
+    "category": "others",
+    "featured": false,
+    "tags": [],
+    "imageUrl": "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/WhatsApp%20Image%202026-06-23%20at%207.19.26%20AM.jpeg",
+    "imageUrls": [
+      "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/WhatsApp%20Image%202026-06-23%20at%207.19.26%20AM.jpeg"
+    ],
+    "description": "Designed and developed a full-stack AI chatbot platform that enables businesses to create, manage, and deploy intelligent AI assistants. The platform includes chatbot configuration, AI model management, user administration, usage analytics, API integration, and centralized monitoring, providing a complete environment for building and operating AI-powered conversational systems.",
+    "fullDescription": "Developed and maintained a comprehensive AI chatbot platform that serves as a centralized hub for creating, managing, and monitoring AI-powered assistants. The project involved both frontend and backend development, platform architecture, AI integrations, user management systems, and operational tooling.\n\nThe platform was designed to simplify the deployment and management of conversational AI solutions while providing administrators with complete control over chatbot configurations, AI models, API usage, and user activity.\n\nKey Features\n\nAI Chatbot Management\n\nCreated and managed AI assistants through a centralized platform.\nSupported chatbot configuration, deployment, and lifecycle management.\nEnabled scalable chatbot operations across multiple use cases.\n\nAI Model Integration\n\nIntegrated large language models and AI services.\nSupported model updates, configuration management, and optimization.\nAllowed flexible model selection for different business requirements.\n\nUser & Workspace Management\n\nManaged users, permissions, and access controls.\nEnabled secure administration of chatbot environments.\nSupported multi-user operational workflows.\n\nAnalytics & Monitoring\n\nTracked chatbot performance and operational metrics.\nMonitored user interactions, usage patterns, and system health.\nProvided insights for optimization and continuous improvement.\n\nAPI & Infrastructure Management\n\nIntegrated external AI APIs and supporting services.\nManaged platform-level configurations and service connectivity.\nMaintained reliable and scalable AI operations.\n\nModern User Experience\n\nDesigned a clean, intuitive, and professional web interface.\nFocused on usability and efficient chatbot administration.\nDelivered a streamlined experience for both administrators and end users.\n\nFull-Stack Development\n\nWorked across frontend, backend, database architecture, AI integrations, and deployment infrastructure.\nManaged the complete development lifecycle from architecture to production deployment.\nTechnologies & Concepts\nArtificial Intelligence\nLarge Language Models (LLMs)\nConversational AI\nAI Agent Systems\nFull-Stack Development\nAPI Integration\nUser Management Systems\nAnalytics & Monitoring\nPlatform Administration\nSaaS Architecture\nAI Infrastructure\nSystem Design\n\nThis project demonstrates expertise in building production-ready AI platforms, combining conversational AI, infrastructure management, user administration, analytics, and scalable software architecture into a unified business solution.",
+    "projectLink": "",
+    "youtubeUrl": ""
+  },
+  {
+    "id": "1782255908626",
+    "order": 18,
+    "title": "Subscription manager",
+    "status": "published",
+    "category": "ai-automation",
+    "featured": false,
+    "tags": [],
+    "imageUrl": "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/Screenshot%202026-06-24%20050318.png",
+    "imageUrls": [
+      "https://qgfptjrdwhcogoveejgx.supabase.co/storage/v1/object/public/ASR/Screenshot%202026-06-24%20050318.png"
+    ],
+    "description": "Developed an automated subscription monitoring and renewal reminder system that tracks subscription expiration dates and proactively notifies users 7 days before renewal. The system helps users make informed decisions to renew, upgrade, or cancel their subscriptions before expiration.",
+    "fullDescription": "Built an automated subscription lifecycle management system designed to monitor active subscriptions and ensure users receive timely notifications before their subscription expires.\n\nThe system continuously tracks subscription expiration dates and automatically sends reminders 7 days before the renewal date, giving users sufficient time to review their subscription status and decide whether to renew, modify, or cancel their plan.\n\nKey Features\n\nAutomated Expiration Tracking\n\nContinuously monitors subscription end dates.\nDetects upcoming renewals without manual intervention.\n\nProactive Reminder System\n\nAutomatically sends notifications 7 days before subscription expiration.\nHelps prevent unexpected service interruptions.\n\nRenewal Decision Support\n\nEncourages users to review their subscription status.\nProvides time to renew, upgrade, downgrade, or cancel subscriptions.\n\nWorkflow Automation\n\nEliminates manual follow-up processes.\nEnsures consistent and reliable reminder delivery.\n\nScalable Subscription Management\n\nSupports multiple subscriptions and users.\nDesigned for SaaS platforms and recurring service businesses.\n\nBusiness Benefits\n\nImproves customer retention.\nReduces accidental subscription expirations.\nEnhances user experience through timely communication.\nTechnologies & Concepts\nSubscription Management\nWorkflow Automation\nAutomated Notifications\nSaaS Operations\nCustomer Retention\nLifecycle Management\nReminder Systems\nBusiness Process Automation\n\nThis solution streamlines subscription management by automating renewal reminders and helping both businesses and customers maintain uninterrupted service while improving operational efficiency.",
+    "projectLink": "",
+    "youtubeUrl": ""
+  }
+]
